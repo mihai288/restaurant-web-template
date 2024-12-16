@@ -1,0 +1,531 @@
+<style>
+    .menu{
+        background-image: linear-gradient(to right, rgb(255, 210, 0), #f7ff00);
+        text-align: center;
+        font-family: 'Consolas', 'Menlo', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', monospace;
+        color: #800020;
+        width: 1200px;
+        height: 60px;
+        border-radius: 10px;
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+        font-weight: bold;
+        box-shadow: 0px 0px 51px 12px #000000;
+        top: 0px; /* Setează valoarea inițială a top */
+        transition: border-radius 0.3s ease, top 0.3s ease;
+         overflow: hidden;
+    }
+    .menu:hover{
+        border-radius: 50px;
+        top:5px;
+    }
+    .menu h{
+        font-size: 35;
+    }
+    .menu p{
+        position: relative;
+        bottom:18px;
+    }
+    .searchbar{
+        border: solid;
+        width: 200px;
+        height: 30px;
+        border-radius:20px;
+        position: relative;
+        padding: 10px;
+        border-color:#800020;
+        font-family: 'Consolas', 'Menlo', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', monospace;
+    }
+    .search{
+        text-align: right;
+        position: relative;
+        bottom:75px;
+        right: 20px;
+
+    }
+    .search button{
+        width: 29px;
+        height: 30px;
+        border:none;
+        border-radius: 30px;
+        position: relative;
+        right: 38px;
+        background-color: #fffb00;
+    }
+    .search button:hover{
+        background-color: #ffcc00;
+        cursor: pointer;
+    }
+    .search button:active{
+        opacity: 0.8;
+    }
+    .about{
+        border:solid;
+        border-color:#800020;
+        width: 100px;
+        height: 40px;
+        border-radius: 10px;
+        position: relative;
+        bottom: 111px;
+        right: 540px;
+        color: #757575;
+        background-color: white;
+        font-family: 'Consolas', 'Menlo', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', monospace;
+    }
+    .about:hover{
+        cursor: pointer;
+        background-color: #bebebe;
+    }
+    .formular{
+        text-align: center;
+        background-color: rgba(255, 210, 0,0.8);
+        font-family: 'Consolas', 'Menlo', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', monospace;
+        color:#800020;
+        height: 500px;
+        width: 700px;
+        display: block;
+        margin: auto;
+        border-radius: 10px;
+        position: relative;
+        top: 0px;
+        transition: border-radius 0.3s ease, top 0.3s ease, opacity 0.3s ease, background-color 0.3s ease;
+        box-shadow: 0px 0px 51px 12px #000000;
+
+    }
+    .formular:hover{
+        border-radius: 35px;
+        top: 5px;
+        background-color: rgba(255, 210, 0,0.95);
+
+    }
+    .text_input{
+        border:none;
+        border-radius: 25px;
+        padding: 5px;
+        background: linear-gradient(145deg, #ffdf80, #ffc300); /* Gradient atractiv */
+        box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2); /* Adăugăm o umbră elegantă */
+    }
+    .obs_input{
+        border:solid;
+        border-color: #800020;
+        border-radius: 25px;
+        padding: 5px;
+        height: 100px;
+    }
+    .submit{
+        border:none;
+        width: 100px;
+        height: 40px;
+        border-radius: 10px;
+        font-family: 'Consolas', 'Menlo', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', monospace;
+        color: #757575;
+        background: linear-gradient(145deg, #ffdf80, #ffc300); /* Gradient atractiv */
+        box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2); /* Adăugăm o umbră elegantă */
+    }
+    .submit:hover{
+        cursor: pointer;
+        background-color: #bebebe;
+    }
+        .menu{
+        background-image: linear-gradient(to right, rgb(255, 210, 0), #f7ff00);
+        text-align: center;
+        font-family: 'Consolas', 'Menlo', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', monospace;
+        color: #800020;
+        width: 1200px;
+        height: 60px;
+        border-radius: 10px;
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+        font-weight: bold;
+        box-shadow: 0px 0px 51px 12px #000000;
+        top: 0px;
+        transition: border-radius 0.3s ease, top 0.3s ease;
+        overflow: hidden;
+    }
+    .menu:hover{
+        border-radius: 50px;
+        top:5px;
+    }
+    .menu h{
+        font-size: 35;
+    }
+    .menu p{
+        position: relative;
+        bottom:18px;
+    }
+    .searchbar{
+        border: none;
+        width: 200px;
+        height: 30px;
+        border-radius:20px;
+        position: relative;
+        padding: 10px;
+        background: linear-gradient(145deg, #ffdf80, #ffc300); /* Gradient atractiv */
+        box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2); /* Adăugăm o umbră elegantă */
+        font-family: 'Consolas', 'Menlo', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', monospace;
+    }
+    .search{
+        text-align: right;
+        position: relative;
+        bottom:76px;
+        right: 20px;
+
+    }
+    .search button{
+        width: 29px;
+        height: 30px;
+        border:none;
+        border-radius: 30px;
+        position: relative;
+        right: 38px;
+        background-color: #fffb00;
+    }
+    .search button:hover{
+        background-color: #ffcc00;
+        cursor: pointer;
+    }
+    .search button:active{
+        opacity: 0.8;
+    }
+    .about{
+        border:none;
+        width: 100px;
+        height: 40px;
+        border-radius: 10px;
+        position: relative;
+        bottom: 111px;
+        right: 470px;
+        color: #757575;
+        background-color: white;
+        font-family: 'Consolas', 'Menlo', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', monospace;
+        background: linear-gradient(145deg, #ffdf80, #ffc300); /* Gradient atractiv */
+        box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2); /* Adăugăm o umbră elegantă */
+    }
+    .about:hover{
+        cursor: pointer;
+        background-color: #b7b7b7;
+    }
+    .meniu{
+        top:35px;
+        background-color: #ffd500;
+        width: 1300px;
+        height: 160px;
+        text-align: center;
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+        transition: border-radius 0.3s ease, height 1s ease, opacity 0.3s ease;
+        border-radius: 25px;
+        box-shadow: 0px 0px 51px 12px #000000;
+        overflow: hidden; /* hide text that overflows */
+        padding: 10px;
+        box-sizing: border-box;
+        opacity: 0.7;
+    }
+    .meniu:hover{
+        border-radius: 50px;
+        height: 800px;
+        opacity: 0.88;
+    }
+    .meniu h2{
+        color:#800020;
+         font-family: 'Consolas', 'Menlo', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', monospace;
+        font-weight: bold;
+        position: relative;
+        font-size: 60;
+        bottom: 10px;
+    }
+    .food_button {
+    font-family: 'Consolas', 'Menlo', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', monospace;
+    font-weight: bold;
+    width: 800px;
+    height: 120px;
+    font-size: 50px;
+    border: none; /* Eliminăm marginea */
+    border-radius: 15px; /* Colțuri mai rotunjite */
+    background: linear-gradient(145deg, #ffdf80, #ffc300); /* Gradient atractiv */
+        box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2); /* Adăugăm o umbră elegantă */
+    color: #800020; /* Culoare text contrastantă */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.food_button:hover {
+    background: linear-gradient(145deg, #ffc300, #ffae00); /* Gradient schimbat pe hover */
+    transform: scale(1.03); /* Mărim butonul puțin */
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3); /* Mai multă umbră */
+    cursor: pointer;
+}
+
+.food_button:active {
+    transform: scale(0.98); /* Butonul pare apăsat */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.4); /* Umbra se micșorează */
+}
+    footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            z-index: 100;
+        }
+    footer a{
+        color: #800020;
+    }
+</style>
+<header>
+    <div class="menu">
+        <h>La Gustul Perfect</h>
+        <p>Savureaza perfectiunea in fiecare farfurie!</p>
+        <div class="search">
+            <input type="text" class="searchbar" placeholder="Ce pofta ai?">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+            <button type="submit"><i class="fa fa-search"></i></button>
+        </div>
+        <button class="about" onclick="window.location.href='home.html';">Inapoi</button>
+    </div>
+</header>
+<body style="background-image: url('../vintage-old-rustic-cutlery-dark_1220-4886.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; margin: 0;">
+    <br>
+    <div class="formular">
+        <h1>Rezerva o masa acum!</h1>
+        <p1>Nume complet:</p1><br>
+        <input type="text" class="text_input" placeholder="ex: Popescu Ion"><br><br>
+        <p1>Numar de telefon:</p1><br>
+        <input type="text" class="text_input" placeholder="ex: 0781123123"><br><br>
+        <p1>Numar de persoane:</p1><br>
+        <input type="number" class="text_input" placeholder="ex: 3"><br><br>
+        <p1>Data:</p1><br>
+        <input type="date" class="text_input" placeholder="ex: 3"><br><br>
+        <p1>Ora:</p1><br>
+        <input type="time" class="text_input" placeholder="ex: 3"><br><br><br><br>
+        <button class="submit">Rezervare</button>
+    </div>
+
+</body>
+<footer>
+    <p>&copy; 2024 <a href="contact.html">La Gustul Prfect</a> made by mihai28. All rights reserved.</p>
+</footer>
+
+<style>
+    .menu{
+        background-image: linear-gradient(145deg, #ffdf80, #ffc300);
+        text-align: center;
+        font-family: 'Consolas', 'Menlo', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', monospace;
+        color: #800020;
+        width: 1200px;
+        height: 60px;
+        border-radius: 10px;
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+        font-weight: bold;
+        box-shadow: 0px 0px 51px 12px #000000;
+        top: 0px;
+        transition: border-radius 0.3s ease, top 0.3s ease;
+        overflow: hidden;
+    }
+    .menu:hover{
+        border-radius: 50px;
+        top:5px;
+    }
+    .menu h{
+        font-size: 35;
+    }
+    .menu p{
+        position: relative;
+        bottom:18px;
+    }
+    .searchbar{
+        border: none;
+        width: 200px;
+        height: 30px;
+        border-radius:20px;
+        position: relative;
+        padding: 10px;
+        background: linear-gradient(145deg, #ffdf80, #ffc300); /* Gradient atractiv */
+        box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2); /* Adăugăm o umbră elegantă */
+        font-family: 'Consolas', 'Menlo', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', monospace;
+    }
+    .search{
+        text-align: right;
+        position: relative;
+        bottom:76px;
+        right: 20px;
+
+    }
+    .search button{
+        width: 29px;
+        height: 30px;
+        border:none;
+        border-radius: 30px;
+        position: relative;
+        right: 38px;
+        background-color: #fffb00;
+    }
+    .search button:hover{
+        background-color: #ffcc00;
+        cursor: pointer;
+    }
+    .search button:active{
+        opacity: 0.8;
+    }
+    .about{
+        border:none;
+        width: 100px;
+        height: 40px;
+        border-radius: 10px;
+        position: relative;
+        bottom: 111px;
+        right: 470px;
+        color: #757575;
+        background-color: white;
+        font-family: 'Consolas', 'Menlo', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', monospace;
+        background: linear-gradient(145deg, #ffdf80, #ffc300); /* Gradient atractiv */
+        box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2); /* Adăugăm o umbră elegantă */
+    }
+    .about:hover{
+        cursor: pointer;
+        background-color: #b7b7b7;
+    }
+    .meniu{
+        top:35px;
+        width: 900px;
+        height: 160px;
+        text-align: center;
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+        transition: border-radius 0.3s ease, height 1s ease, opacity 0.3s ease, box-shadow 1s ease;
+        border-radius: 25px;
+
+        overflow: hidden; /* hide text that overflows */
+        padding: 10px;
+        box-sizing: border-box;
+        opacity: 0.7;
+        background: linear-gradient(145deg, #ffdf80, #ffc300);
+        box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+    }
+    .meniu:hover{
+        border-radius: 50px;
+        height: 800px;
+        opacity: 0.88;
+        background: linear-gradient(145deg, #ffdf80, #ffa600);
+        cursor: pointer;
+        box-shadow: 0px 5px 25px rgb(255, 151, 0);
+    }
+    .meniu h2{
+        color:#800020;
+         font-family: 'Consolas', 'Menlo', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', monospace;
+        font-weight: bold;
+        position: relative;
+        font-size: 60;
+        bottom: 10px;
+    }
+    .food_button {
+    font-family: 'Consolas', 'Menlo', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', monospace;
+    font-weight: bold;
+    width: 800px;
+    height: 120px;
+    font-size: 50px;
+    border: none; /* Eliminăm marginea */
+    border-radius: 15px; /* Colțuri mai rotunjite */
+    background: linear-gradient(145deg, #ffdf80, #ffc300); /* Gradient atractiv */
+        box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2); /* Adăugăm o umbră elegantă */
+    color: #800020; /* Culoare text contrastantă */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.food_button:hover {
+    background: linear-gradient(145deg, #ffc300, #ffae00); /* Gradient schimbat pe hover */
+    transform: scale(1.03); /* Mărim butonul puțin */
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3); /* Mai multă umbră */
+    cursor: pointer;
+}
+
+.food_button:active {
+    transform: scale(0.98); /* Butonul pare apăsat */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.4); /* Umbra se micșorează */
+}
+    footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: linear-gradient(145deg, #ffc300, #ffae00);
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            z-index: 100;
+        }
+    footer a{
+        color: #800020;
+    }
+    .food_image{
+        width: 500px; /* sau altă dimensiune dorită */
+        height: auto; /* păstrează proporțiile imaginii */
+        border-radius: 8px; /* exemplu, pentru un design mai elegant */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* exemplu pentru un efect de umbră */
+        position: relative;
+    }
+    .food_content{
+        background: linear-gradient(145deg, #ffdf80, #ffc300);
+        position: relative;
+        bottom: 150px;
+        width: 500px;
+        display: block;
+        margin: auto;
+        border-radius: 20px;
+        box-shadow:0;
+        transition: bottom 0.3s ease, box-shadow 0.3s ease;
+    }
+    .food_content h1{
+        font-family: 'Consolas', 'Menlo', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', monospace;
+        font-weight: bold;
+        color: #800020;
+    }
+    .food_content p1{
+        position: relative;
+        left: 400px;
+        font-family: 'Consolas', 'Menlo', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', monospace;
+        font-weight: bold;
+        bottom: 15px;
+        color: #800020;
+        font-size:18;
+    }
+    .food_content:hover{
+        bottom: 160px;
+        box-shadow: 0px 0px 40px rgb(211, 100, 100); /* Adăugăm o umbră elegantă */
+    }
+    #categorie{
+        font-size: 50;
+        font-family: 'Consolas', 'Menlo', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', monospace;
+        font-weight: bold;
+        color: #800020;
+        text-align: center;
+        position: relative;
+        bottom: 180px;
+    }
+    .separator{
+        background: linear-gradient(145deg, #ffdf80, #ffc300);
+        text-align: center;
+        font-family: 'Consolas', 'Menlo', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', monospace;
+        font-weight: bold;
+        color: #800020;
+        border-radius: 20px;
+        height: 50px;
+        box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+        display: block;
+        margin: auto;
+        width: 800px;
+        transition: width 0.3s ease, box-shadow 0.3s ease;
+    }
+    .separator h1{
+        position: relative;
+        top: 5px;
+    }
+</style>
